@@ -3,10 +3,10 @@ import './ListProduct.css'
 import cross_icon from '../../assets/cross_icon.png'
 
 const ListProduct = () => {
-
+//http://localhost:4000/allproducts
     const [allproducts,setAllProductrs] = useState([]);
     const fetchInfo = async ()=>{
-        await fetch('http://localhost:4000/allproducts')
+        await fetch('https://mern-window-backend.onrender.com')
         .then((res)=>res.json())
         .then((data)=>{
             setAllProductrs(data)
@@ -17,9 +17,9 @@ const ListProduct = () => {
         fetchInfo();
     },[])
 
-
+//http://localhost:4000/removeproduct
     const remove_product = async(id)=>{
-        await fetch('http://localhost:4000/removeproduct',{
+        await fetch('https://mern-window-backend.onrender.com',{
             method:'POST',
             headers:{
                 Accept:'application/json',
