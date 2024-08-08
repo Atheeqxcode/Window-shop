@@ -9,7 +9,13 @@ const cors = require("cors");
 const { log } = require("console");
 
 app.use(express.json());
-app.use(cors());
+app.use(cors(
+    {
+        origin:["https://Mern-Window-shop.vercel.app"],
+        methods:["POST","GET"],
+        credentials:true
+    }
+));
 
 // Database Connection With MongoDB
 mongoose.connect("mongodb+srv://atheeqzee8:9845800595@cluster0.ntaj0qw.mongodb.net/E-commerce", {
