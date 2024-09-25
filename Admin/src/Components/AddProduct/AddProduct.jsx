@@ -26,7 +26,7 @@ const Add_product= async ()=>{
     let formData = new FormData();
     formData.append('product',image);
 //http://localhost:4000/upload
-    await fetch('https://mern-window-backend.onrender.com',{
+    await fetch('https://window-shop-backend.onrender.com',{
         method:'POST',
         headers:{
             Accept:'application/json',
@@ -38,7 +38,7 @@ const Add_product= async ()=>{
         product.image= responseData.image_url;
         console.log(product);
         //http://localhost:4000/addproduct
-        await fetch('https://mern-window-backend.onrender.com',{
+        await fetch('https://window-shop-backend.onrender.com',{
             method:'POST',
             headers:{
                 Accept:'application/json',
