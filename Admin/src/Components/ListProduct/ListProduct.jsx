@@ -6,7 +6,7 @@ const ListProduct = () => {
 //http://localhost:4000/allproducts
     const [allproducts,setAllProductrs] = useState([]);
     const fetchInfo = async ()=>{
-        await fetch('https://window-shop-backend.onrender.com')
+        await fetch('https://window-shop-frontend.onrender.com')
         .then((res)=>res.json())
         .then((data)=>{
             setAllProductrs(data)
