@@ -5,19 +5,27 @@ const mongoose = require("mongoose");
 const jwt = require("jsonwebtoken");
 const multer = require("multer");
 const path = require("path");
-const cors = require("cors");
+// const cors = require("cors");
 // const { log } = require("console");
 
 
 
 app.use(express.json());
-app.use(cors(
-    // {
-    //     origin:["https://Mern-Window-shop.vercel.app"],
-    //     methods:["POST","GET"],
-    //     credentials:true
-    // }
-));
+// app.use(cors(
+//     // {
+//     //     origin:["https://Mern-Window-shop.vercel.app"],
+//     //     methods:["POST","GET"],
+//     //     credentials:true
+//     // }
+// ));
+const cors = require('cors');
+
+app.use(cors({
+    origin: ["https://window-shop-frontend.onrender.com", "https://window-shop-admin.onrender.com"],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true, // If you're dealing with cookies or authorization headers
+}));
+
 
 // Database Connection With MongoDB
 mongoose.connect("mongodb+srv://atheeqzee8:9845800595@cluster0.ntaj0qw.mongodb.net/E-commerce", {
