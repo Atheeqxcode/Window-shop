@@ -20,7 +20,7 @@ const LoginSignup = () =>{
 
 console.log("Login Done",formData);
 let responseData;
-  await fetch('http://localhost:4000/login',{
+  await fetch('https://window-shop-backend.onrender.com/login',{
     method:'POST',
     headers:{
       Accept:'application/form-data',
@@ -44,7 +44,7 @@ const signup = async()=>{
 
   console.log("Signup done",formData);
   let responseData;
-  await fetch('http://localhost:4000/signup',{
+  await fetch('https://window-shop-backend.onrender.com/signup',{
     method:'POST',
     headers:{
       Accept:'application/form-data',
@@ -74,13 +74,14 @@ const signup = async()=>{
           <input name='password' value={formData.password} onChange={changeHandler} type="Password" placeholder='Password' />
         </div>
         <button onClick={()=>{state==="Login"?login():signup()}}>Continue</button>
-        {state==="Sign up"
-        ?<p className='loginsignup-login'>Already have an account? <span onClick={()=>{setState("Login")}}>Login Here</span></p>
-        : <p className='loginsignup-login'>Create an Account? <span onClick={()=>{setState("Sign up")}}>Click Here</span></p> }
         <div className="loginsignup-agree">
           <input type="checkbox" name='' id=''/>
           <p> by Continuing, i agree to the terms of use & privacy policy.</p>
         </div>
+        {state==="Sign up"
+        ?<p className='loginsignup-login'>Already have an account? <span onClick={()=>{setState("Login")}}>Login Here</span></p>
+        : <p className='loginsignup-login'>Create an Account? <span onClick={()=>{setState("Sign up")}}>Click Here</span></p> }
+        
       
       </div>
       
