@@ -24,20 +24,20 @@ const ShopContextProvider = (props) => {
     const [all_product,setAll_Product] = useState([]);
 //http://localhost:4000/allproducts
         useEffect(()=>{
-            fetch("https://window-shop-backend.onrender.com")
+            fetch("https://window-shop-backend.onrender.com/allproducts")
             .then((response)=>response.json())
             .then((data)=>setAll_Product(data))
 //http://localhost:4000/getcart
             if(localStorage.getItem('auth-token')){
-                fetch("https://window-shop-backend.onrender.com",{
+                fetch("https://window-shop-backend.onrender.com/getcart",{
                     method:'POST',
                     headers:{
-                        Accept:'application/form-data',
+                        Accept:'application/json',//form-data
                         'auth-token' :`${localStorage.getItem('auth-token')}`,
                         'Content-Type':'application/json',
 
                     },
-                    body:"",
+                    body:JSON.stringify({}) ,//"",
 
                 }).then((response)=>response.json())
                 .then((data)=>setCartItems(data));
@@ -50,7 +50,7 @@ const ShopContextProvider = (props) => {
     setCartItems((prev)=>({...prev,[itemId]:prev[itemId]+1}))
     if(localStorage.getItem('auth-token')){
         //http://localhost:4000/addtocart
-        fetch("https://window-shop-backend.onrender.com",{
+        fetch("https://window-shop-backend.onrender.com/addtocart",{
             method:'POST',
             headers:{
                 Accept:'application/form-data',
@@ -68,7 +68,7 @@ const ShopContextProvider = (props) => {
     setCartItems((prev)=>({...prev,[itemId]:prev[itemId]-1}));
     if(localStorage.getItem('auth-token')){
         //http://localhost:4000/removefromcart
-        fetch("https://window-shop-backend.onrender.com",{
+        fetch("https://window-shop-backend.onrender.com/removefromcart",{
             method:'POST',
             headers:{
                 Accept:'application/form-data',
