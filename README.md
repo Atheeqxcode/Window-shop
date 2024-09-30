@@ -11,3 +11,10 @@ Live At https://window-shop-frontend.onrender.com/
 
 
 ![Screenshot_30-9-2024_234010_window-shop-frontend onrender com](https://github.com/user-attachments/assets/39e615ba-4b5f-4e2f-a323-8dcfc7984188)
+
+
+![Screenshot_1-10-2024_019_window-shop-admin onrender com](https://github.com/user-attachments/assets/29b7dc6b-97b3-45ff-839e-5c521f268b22)
+
+![Screenshot_1-10-2024_0049_window-shop-admin onrender com](https://github.com/user-attachments/assets/818f08a3-80d8-4072-b390-98fa057f9e59)
+
+
